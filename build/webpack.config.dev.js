@@ -22,7 +22,7 @@ module.exports = merge(baseConfig, {
     publicPath: '/',
     quiet: true
   },
-
+  devtool: "source-map",
   module: {
     rules: [
       {
@@ -30,13 +30,6 @@ module.exports = merge(baseConfig, {
         use: [
           'vue-style-loader',
           'css-loader'
-        ]
-      }, {
-        test: /\.styl(us)?$/,
-        use: [
-          'vue-style-loader',
-          'css-loader',
-          'stylus-loader'
         ]
       }
     ]
