@@ -4,7 +4,7 @@
   "description": "A Vuejs template using Webpack 4",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --progress --config build/webpack.config.dev.js",
+    "dev": "npm run lint:fix && webpack-dev-server --progress --config build/webpack.config.dev.js",
     "prod": "webpack --config build/webpack.config.prod.js",
     "lint": "eslint --ext .js,.vue src",
     "lint:fix": "eslint --ext .js,.vue src --fix",
@@ -22,6 +22,7 @@
     "axios": "^0.21.0",
     "element-theme-chalk": "^2.13.1",
     "element-ui": "^2.13.1",
+    "node-sass": "^5.0.0",
     "vue": "^2.6.11",
     "vue-router": "^3.1.5"
   },
@@ -46,8 +47,10 @@
     "eslint-plugin-standard": "4.0.1",
     "eslint-plugin-vue": "^6.2.2",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^4.3.0",
     "jest": "^25.1.0",
     "jest-serializer-vue": "^2.0.2",
+    "lint-staged": "^10.5.1",
     "lodash.template": "^4.5.0",
     "mini-css-extract-plugin": "^0.9.0",
     "sass": "^1.29.0",
@@ -64,5 +67,17 @@
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.3",
     "webpack-merge": "^4.2.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{jsx,js,tsx,ts}": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }

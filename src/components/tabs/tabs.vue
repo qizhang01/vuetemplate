@@ -52,7 +52,7 @@
     const focusFirst = (element, root) => {
         try {
             element.focus();
-        } catch (err) {} // eslint-disable-line no-empty
+        } catch (err) {}
         if (document.activeElement === element && element !== root) return true;
         const candidates = element.children;
         for (const candidate of candidates) {

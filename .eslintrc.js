@@ -14,12 +14,7 @@ module.exports = {
   plugins: [
     'vue'
   ],
-  // add your custom rules here
   'rules': {
-    //"off"或0 -关闭规则
-    //"warn" 或1 - 开启规则, 使用警告 程序不会退出
-    //"error"或2 - 开启规则, 使用错误 程序退出
-
     'indent': ['error', 4],
     'vue/script-indent': ['error', 4, { 'baseIndent': 1 }],
     //分号

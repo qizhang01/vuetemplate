@@ -3,7 +3,6 @@
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const baseConfig = require('./webpack.config.base')
-
 const HOST = 'localhost'
 const PORT = 8080
 
@@ -29,7 +28,15 @@ module.exports = merge(baseConfig, {
         test: /\.css$/,
         use: [
           'vue-style-loader',
-          'css-loader'
+          'css-loader',
+        ]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          'vue-style-loader',
+          'css-loader',
+          'sass-loader'
         ]
       }
     ]
