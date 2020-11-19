@@ -6,7 +6,7 @@
 
 <style scoped>
 .container {
-  /* font-family 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif */
+  font-family : 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   max-width: 1200px;
 }
 </style>

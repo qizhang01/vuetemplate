@@ -15,7 +15,7 @@
 </template>
 
 <script>
-    import { Button } from "@/components/button";
+    import Button from "@/components/button";
     export default {
         data() {
             return {
@@ -33,7 +33,9 @@
             callUnmockedApi() {},
             callOtherApi() {},
             getAndGo() {},
-            getAndGo2() {},
+            getAndGo2(e) {
+                console.log(e)
+            },
             getAndGo3() {}
         },
         components: { Button }

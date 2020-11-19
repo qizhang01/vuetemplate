@@ -15,7 +15,6 @@
     import Icon from './icon'
     import { oneOf } from '@/utils/tools'
     const prefixCls = 'ikea-btn'
-
     export default {
         name: 'Button',
         components: { Icon },

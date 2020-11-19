@@ -3,10 +3,17 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
-
+const path = require('path');
 const utils = require('./utils')
 
 module.exports = {
+  entry: {
+    app: './src/index.js',
+},
+output: {
+    filename: 'js/[name].bundle.js',
+    path: path.resolve(__dirname, '../dist'),
+},
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
