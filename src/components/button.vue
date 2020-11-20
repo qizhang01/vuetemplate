@@ -16,7 +16,7 @@
     import { oneOf } from '@/utils/tools'
     const prefixCls = 'ikea-btn'
     export default {
-        name: 'Button',
+        name: 'IkeaButton',
         components: { Icon },
         props: {
             type: {
@@ -46,7 +46,7 @@
                 type: String,
                 default: ''
             },
-
+            bgcolor: String,
             long: {
                 type: Boolean,
                 default: false
@@ -68,7 +68,8 @@
                         [`${prefixCls}-long`]: this.long,
                         [`${prefixCls}-${this.shape}`]: !!this.shape,
                         [`${prefixCls}-${this.size}`]: this.size !== 'default',
-                        [`${prefixCls}-ghost`]: this.ghost
+                        [`${prefixCls}-ghost`]: this.ghost,
+                        [`${prefixCls}-${this.bgcolor}`]: this.bgcolor,
                     }
                 ]
             },
@@ -106,5 +107,12 @@
 </script>
 
 <style>
-
+   .ikea-btn-long {
+       width: 408px;
+       height: 54px;
+       color: #fff;
+   }
+   .ikea-btn-black {
+       background-color: #262626;
+   }
 </style>

@@ -77,6 +77,9 @@
     .mainContent-content__select-item {
         display: flex;
         align-items: center;
+        .bsae-text{
+            cursor: pointer;
+        }
     }
 }
 .PDPKeySellingPointsUI {
