@@ -23,8 +23,10 @@
         },
         methods: {
             updateChildren() {
-                this.$children.forEach(child => {
-                    child.separator = this.separator;
+                this.$children.forEach((child, index) => {
+                    if (index !== this.$children.length - 1) {
+                        child.separator = this.separator;
+                    }
                 });
             }
         },

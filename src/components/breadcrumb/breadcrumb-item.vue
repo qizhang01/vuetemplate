@@ -1,5 +1,5 @@
 <template>
-    <span>
+    <span class="ikea-breadcrumb-item base-text light-text__fontweight" :style="styles">
         <a
             v-if="to"
             :href="linkUrl"
@@ -26,7 +26,10 @@
     export default {
         name: "BreadcrumbItem",
         mixins: [mixinsLink],
-        props: {},
+        props: {
+            fontSize: [Number, String],
+            marginValue: [Number, String],
+        },
         data() {
             return {
                 separator: "",
@@ -39,6 +42,16 @@
             },
             separatorClasses() {
                 return `${prefixCls}-separator`;
+            },
+            styles() {
+                const style = {};
+                if (this.fontSize) {
+                    style["font-size"] = `${this.fontSize}px`;
+                }
+                if (this.marginValue) {
+                    style.margin = `0px ${this.margin}px`;
+                }
+                return style;
             }
         },
         mounted() {
@@ -46,3 +59,16 @@
         }
     };
 </script>
+<style lang='scss'>
+.ikea-breadcrumb-item {
+    .ikea-breadcrumb-item-link {
+        &:hover{
+            color: #107c8c;
+            text-decoration: underline;
+        }
+    }
+    .ikea-breadcrumb-item-separator {
+        margin: 0 4px;
+    }
+}
+</style>

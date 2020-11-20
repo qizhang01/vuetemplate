@@ -17,11 +17,17 @@ li {
     list-style: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
     margin: 0;
     font-weight: normal;
 }
-
+h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.75rem;
+    letter-spacing: 0.125rem;
+    color: #424242
+}
 a {
     cursor: pointer;
     text-decoration: none;
@@ -51,4 +57,32 @@ div, section, nav, p {
 
 .container a{
     color: #424242;
+}
+.base-text {
+    font-size: 0.72rem;
+    line-height: 1.1rem;
+    letter-spacing: 0.025rem;
+}
+.medium-text__fontweight {
+    font-weight: 500
+}
+.light-text__fontweight {
+    font-weight: 400;
+    color: #424242;
+}
+.big-text{
+    font-weight: 500;
+    font-size: 1.1875rem;
+    line-height: 1.375rem;
+    letter-spacing: 0.125rem;
+}
+.medium-text{
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.0187rem;
+    min-height: 15px;
+}
+.color-tag-a {
+    color: #107c8c
 }

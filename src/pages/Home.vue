@@ -87,9 +87,16 @@
             </section>
         </div>
         <main class="content-container">
+            <div class="content-container__breadcrumb">
+                <Breadcrumb separator=">" >
+                    <BreadcrumbItem v-for="item in breadcrumbList" :key="item.id" :to="item.to">{{item.name}}</BreadcrumbItem>
+                </Breadcrumb>
+            </div>
             <div class= "content-container__panel">
-                <div class='content-container-panel__main'>这里是主内容</div>
-                <div class='content-container-panel__side'>这里是选择区域</div>
+                <div class='content-container-panel__main'><MainContent /></div>
+                <div class='content-container-panel__side'>
+                    <AsideContent />
+                </div>
             </div>
         </main>
         <router-view></router-view>
@@ -99,6 +106,10 @@
 <script>
     // import Button from "@/components/button";
     import Menu from '@/components/menu'
+    import Breadcrumb from '@/components/breadcrumb/breadcrumb'
+    import BreadcrumbItem from '@/components/breadcrumb/breadcrumb-item'
+    import AsideContent from './AsideContent'
+    import MainContent from './MainContent'
     // import search from 'static/img/search.svg'
     // import focus from 'static/img/focus.svg'
     // import lock from 'static/img/lock.svg'
@@ -146,6 +157,28 @@
         imgUrl: '',
         color: defaultColor,
     }]
+    const breadcrumbList = [{
+        id: 1,
+        to: '/',
+        name: 'Home'
+    },{
+        id: 2,
+        to: '/',
+        name: 'Living Room Furniture'
+    },{
+        id: 3,
+        to: '/',
+        name: 'Sofas, Sectionals & Loveseats'
+    },{
+        id: 4,
+        to: '/',
+        name: 'Sectionals'
+    },{
+        id: 5,
+        to: '',
+        name: 'Eliot Sleeper Sectional'
+    }]
+
     export default {
         data() {
             return {
@@ -156,6 +189,7 @@
                 pageSize: 6,
                 loading: false,
                 menuList,
+                breadcrumbList,
             };
         },
         methods: {
@@ -169,7 +203,7 @@
             },
             getAndGo3() {}
         },
-        components: { Menu }
+        components: { Menu, AsideContent, Breadcrumb, BreadcrumbItem, MainContent }
     };
 </script>
 
@@ -252,5 +286,18 @@
             display: flex;
             justify-content: space-between;
         }
+        .content-container__breadcrumb {
+            min-height: 45px;
+            line-height: 45px;
+        }
+    }
+    .content-container-panel__side {
+        width: 460px;
+        min-width: 460px;
+        flex: 0 1;
+    }
+    .content-container-panel__main {
+        flex: 1 1;
+        margin-right: 3rem;
     }
 </style>

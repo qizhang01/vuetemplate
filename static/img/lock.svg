@@ -3,9 +3,9 @@
         <g id="icon-/-24px-/-cart" transform="translate(-3 -2)" stroke="#484848" stroke-width="1.5">
             <g id="Cart-Icon" transform="translate(3 3)">
                 <g id="Cart">
-                    <path d="M13.5,4.42285714 C13.5,1.98018059 11.4852814,0 9,0 C6.51471863,0 4.5,1.98018059 4.5,4.42285714" id="Oval-2">
+                    <path d="M13.5,4.42285714 C13.5,1.98018059 11.4852814,0 9,0 C6.51471863,0 4.5,1.98018059 4.5,4.42285714" stroke="#484848" id="Oval-2">
                     </path>
-                    <rect id="Rectangle-4" x="0.75" y="4.125" width="16.5" height="13.125" rx="2"></rect>
+                    <rect id="Rectangle-4" x="0.75" y="4.125" width="16.5" height="13.125" rx="2" stroke="#484848"></rect>
                 </g>
             </g>
         </g>
