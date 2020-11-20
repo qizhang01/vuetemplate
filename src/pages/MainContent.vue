@@ -67,11 +67,12 @@
         line-height: 25px;
     }
     .RatioContainer{
-        max-width: calc((100vh - 194px) / 0.666667);
+        max-width: calc(100% - 100px);
     }
 }
 .mainContent-content__select {
     display: flex;
+    max-width: calc(100% - 100px);
     align-items: center;
     justify-content: space-between;
     .mainContent-content__select-item {
@@ -86,6 +87,7 @@
     display: flex;
     justify-content: center;
     margin-top: 2rem;
+    max-width: calc(100% - 100px);
 }
 
 </style>

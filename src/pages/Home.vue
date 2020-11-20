@@ -281,7 +281,7 @@
     .content-container {
         margin: 0px $margin;
         .content-container__panel {
-            padding: 10px 2vw;
+            padding: 10px 0px;
             display: flex;
             justify-content: space-between;
         }

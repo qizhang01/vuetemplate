@@ -57,7 +57,9 @@
             }
         },
         data() {
-            return {}
+            return {
+                isClicked: false
+            }
         },
         computed: {
             classes() {
@@ -70,6 +72,7 @@
                         [`${prefixCls}-${this.size}`]: this.size !== 'default',
                         [`${prefixCls}-ghost`]: this.ghost,
                         [`${prefixCls}-${this.bgcolor}`]: this.bgcolor,
+                        isClicked: this.isClicked
                     }
                 ]
             },
@@ -81,7 +84,7 @@
 
             tagName() {
                 const { isHrefPattern } = this
-                return isHrefPattern ? 'a' : 'button'
+                return isHrefPattern ? 'a' : 'div'
             },
 
             tagProps() {
@@ -96,6 +99,7 @@
         methods: {
             handleClickLink(event) {
                 this.$emit('click', event)
+                this.isClicked = true
                 const openInNewWindow = event.ctrlKey || event.metaKey
                 this.handleCheckClick(event, openInNewWindow)
             }
@@ -107,12 +111,25 @@
 </script>
 
 <style>
+    .ikea-btn {
+        background: #fff;
+        font-size: 0.72rem;
+        font-weight: 500;
+        line-height: 1.1rem;
+        letter-spacing: 0.025rem;
+        border: 1px solid #e5e5e5;
+        border-radius: 4px;
+        padding: 8px 12px;
+        transition: all 75ms ease;
+        cursor: pointer;
+        display: inline-block;
+    }
    .ikea-btn-long {
        width: 408px;
        height: 54px;
-       color: #fff;
    }
    .ikea-btn-black {
+       color: #fff;
        background-color: #262626;
    }
 </style>

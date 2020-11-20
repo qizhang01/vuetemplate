@@ -15,7 +15,9 @@
             </p>
         </div>
     </div>
-
+    <div>
+        <Customize />
+    </div>
     <div class="PDPChooseYourOptionsUI__section marginTop">
         <div class="content-title">Select Orientation</div>
         <div class="ImageAndTextOptionDisplay__container">
@@ -57,6 +59,7 @@
 <script>
     import IkeaTypeSwitch from '@/components/typeSwitch'
     import IkeaButton from '@/components/button'
+    import Customize from './customize'
     export default {
         data() {
             return {
@@ -78,7 +81,7 @@
                 console.log(item)
             }
         },
-        components: { IkeaTypeSwitch, IkeaButton }
+        components: { IkeaTypeSwitch, IkeaButton , Customize }
     };
 </script>
 
