@@ -13,7 +13,9 @@
             <svg width="11" height="11" viewBox="0 0 16 16" class="customize-content__icon"><g fill="#8d8d8d" fill-rule="nonzero"><path d="M8 0C3.589 0 0 3.589 0 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8zm0 15.015A7.023 7.023 0 01.985 8 7.023 7.023 0 018 .985 7.023 7.023 0 0115.015 8 7.023 7.023 0 018 15.015z"></path><circle cx="8.128" cy="4.81" r="1"></circle><path d="M7.91 6.976a.492.492 0 00-.492.493v4.184a.492.492 0 00.985 0V7.47a.492.492 0 00-.492-.493z"></path></g></svg>
         </div>
         <div class="customize-picture__wall">
-            <IkeaPictureThumb v-for="item in selectBgPicture" :type="item.type" :imgUrl="item.imgUrl" :text="item.text" :key="item.id" />
+            <IkeaPictureThumb v-for="item in selectBgPicture" :type="item.type" :imgUrl="item.imgUrl" :text="item.text" :bground="item.bground" :key="item.id" />
+            <div class="customize-picture__wall-card" v-show="isShowCard">
+            </div>
         </div>
         <div class="customize-create">
             <div class="customize-create__button">Create your style</div>
@@ -37,7 +39,8 @@
     export default {
         data() {
             return {
-                selectBgPicture
+                selectBgPicture,
+                isShowCard: false
             };
         },
         methods: {
@@ -52,7 +55,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-top: 10px;
     }
     .customize-notice__panel {
         padding: 16px;
@@ -60,7 +62,7 @@
         display: flex;
         justify-content: space-between;
         border-radius: 5px;
-        margin-top: 10px;
+        margin-top: 30px;
         position: relative;
         .ikea-btn {
             margin-right: 26px;
@@ -74,12 +76,24 @@
     }
 
     .customize-create__button {
-        padding: 0.6rem 1.1rem;
-        border-radius: 20px;
-        text-decoration: none;
-        color: white;
+        color: #424242;
+        font-size: 15px;
+        padding: 15px 15px;
+        background: #fff;
+        border: 1px transparent solid;
+        border-radius: 30px;
         position: relative;
-        background-image: linear-gradient(90deg,#fdde5c,#f8ab5e 16.66667%,#f56a62 33.33333%,#a176c8 50%,#759beb 66.66667%,#65beb3 83.33333%,#70db96)
+        &:after {
+            content: "";
+            z-index: -1;
+            border-radius: 30px;
+            top: -3px;
+            bottom: -3px;
+            left: -3px;
+            right: -3px;
+            position: absolute;
+            background: linear-gradient(135deg, #000781, #23b7cb);
+        }
     }
     .ikea-btn:hover{
         border: 1px solid #8d8d8d;
@@ -116,6 +130,18 @@
                 cursor: pointer;
                 stroke: #107c8c;
             }
+        }
+    }
+    .customize-picture__wall{
+        position: relative;
+        margin-bottom: 20px;
+        .customize-picture__wall-card {
+            position: absolute;
+            height: 400px;
+            width: 420px;
+            top: 0px;
+            left: -425px;
+            background: #fff;
         }
     }
 </style>

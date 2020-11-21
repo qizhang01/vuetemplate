@@ -1,7 +1,7 @@
 <template>
-    <div class="ikea-picture-thumb">
+    <div class="ikea-picture-thumb" :style="bgroundStl">
         <img class ="ikea-picture-thumb__item" v-if="type=='img'" :src='imgUrl' :style="styles"/>
-        <span v-else class ="ikea-picture-thumb__item base-text">+{{text}}</span>
+        <span v-if="type=='text'" class ="ikea-picture-thumb__item base-text">+{{text}}</span>
     </div>
 </template>
 <script>
@@ -17,11 +17,12 @@
             imgUrl: String,
             type: {
                 validator(value) {
-                    return oneOf(value, ['img', 'text'])
+                    return oneOf(value, ['img', 'text','bg'])
                 },
                 default: 'img'
             },
-            text: String
+            text: String,
+            bground: String
         },
         computed: {
             styles() {
@@ -31,6 +32,13 @@
                 }
                 return style;
             },
+            bgroundStl() {
+                const style = {};
+                if (this.bground) {
+                    style.background = this.bground
+                }
+                return style;
+            }
         },
     };
 </script>

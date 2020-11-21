@@ -1,6 +1,6 @@
 <template>
     <ul class="ikea-menu__list" :style="styles">
-        <li class="ikea-menu__list-item" v-for="(item, key) in menuList" :key="key">
+        <li class="ikea-menu__list-item" v-for="(item, key) in menuList" :key="key" @mouseover="mouseOver(key)" @mouseleave="mouseLeave(key)">
             <a class="ikea-menu__list__anchor" :href="item.href" :style="{ color: item.color }">{{item.name}}</a>
             <image v-if ="item.imgurl" class="ikea-menu__list-img" :src="item.imgurl"></image>
         </li>
@@ -23,7 +23,12 @@
             },
         },
         methods: {
-
+            mouseOver(key){
+                console.log(key)
+            },
+            mouseLeave(key){
+                console.log(key)
+            }
         }
     };
 </script>

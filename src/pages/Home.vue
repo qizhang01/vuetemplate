@@ -5,8 +5,8 @@
                 <div class="consumer-navbar__list-item">
                     <a class="consumer-navbar__list__anchor" href="/customer-photos/">Get Inspired</a>
                 </div>
-                <div class="consumer-navbar__list-item">
-                    <a class="consumer-navbar__list__anchor shop-by">
+                <div class="consumer-navbar__list-item shop-by" @mouseover="mouseOver" @mouseleave="mouseLeave">
+                    <a class="consumer-navbar__list__anchor">
                         Shop By
                     </a>
                     <svg width="9" height="5" viewBox="0 0 9 5" class="consumer-navbar__list__anchor-more">
@@ -40,8 +40,8 @@
                 <div class="consumer-navbar__list-item">
                     <a class="consumer-navbar__list__anchor" href="https://help.joybird.com">Help</a>
                 </div>
-                <div class="consumer-navbar__list-item">
-                    <a class="consumer-navbar__list__anchor about">About
+                <div class="consumer-navbar__list-item about" @mouseover="mouseOver" @mouseleave="mouseLeave">
+                    <a class="consumer-navbar__list__anchor ">About
                     </a>
                     <svg width="9" height="5" viewBox="0 0 9 5" class="consumer-navbar__list__anchor-more">
                         <path fill="#000" fill-rule="nonzero" d="M4.462 5L0 .672.692 0 4.46 3.732 8.309 0 9 .672z"></path>
@@ -57,7 +57,7 @@
                 <img src='static/img/log.png' />
             </section>
             <section class="menu-section">
-                <Menu :menuList='menuList'></Menu>
+                <Menu :menuList='menuList' ></Menu>
             </section>
             <section class = "tool-section">
                 <div class="tool-section-item" key="search" >
@@ -200,11 +200,12 @@
             };
         },
         methods: {
-            callMockApi() {},
-            callLoading() {},
-            callUnmockedApi() {},
-            callOtherApi() {},
-            getAndGo() {},
+            mouseOver(e) {
+                this.ifShowMenuList = true
+            },
+            mouseLeave(e) {
+                this.ifShowMenuList = false
+            },
             handleClickTool(item) {
                 console.log(item)
             },
@@ -319,8 +320,7 @@
         position: absolute;
         // min-height: 300px;
         height: calc(100vh - 100px);
-        background: #424242;
-        opacity: 0.8;
+        background: rgba(0,0,0,0.3);
         width: 100%;
         z-index: 9000;
         top: 40px;
@@ -328,6 +328,7 @@
             min-height: 300px;
             height: 300px;
             background: #fff;
+            opacity: 1;
         }
     }
     .consumer-navbar__sign-in-link {
@@ -341,6 +342,15 @@
         &:hover {
             cursor: pointer;
             color: #107c8c;
+        }
+    }
+    .consumer-navbar__list-item{
+        &.shop-by:hover,
+        &.about:hover
+        {
+            svg {
+                transform: rotate(180deg)
+            }
         }
     }
 </style>

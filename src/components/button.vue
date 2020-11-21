@@ -127,6 +127,9 @@
    .ikea-btn-long {
        width: 408px;
        height: 54px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
    }
    .ikea-btn-black {
        color: #fff;
