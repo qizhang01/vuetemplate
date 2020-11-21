@@ -3,26 +3,24 @@ import * as types from '@/store/mutationTypes.js';
 export default {
     namespaced: true,
     state: {
-        userInfo: '123',
+        showPictureUrl: '../../static/img/1.jpg',
+        ifShowRightText: true
     },
     getters: {
         getUserInfo: (state) => {
-            const { userInfo } = state;
-            return `${userInfo} 111`;
+            const { showPictureUrl } = state;
+            return showPictureUrl;
         },
     },
     actions: {
-        changeUserInfo({ commit }, info) {
-            const userInfo = `this is ${info}`;
-            commit(types.SET_USER_INFO, userInfo);
+        changePictureUrl({ commit }, info) {
+            commit(types.SET_SHOW_IMG, info);
         },
     },
     mutations: {
-        [types.SET_USER_INFO](state, userInfo) {
-            state.userInfo = userInfo;
-        },
-        [types.SET_RANK](state, rank) {
-            state.rank = rank;
+        [types.SET_SHOW_IMG](state, info) {
+            state.showPictureUrl = info.origin;
+            state.ifShowRightText = info.position === 'left';
         },
     },
 };

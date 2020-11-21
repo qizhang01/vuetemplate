@@ -2,46 +2,64 @@ export const thumbSectionList1 = [{
     id: 1,
     imgUrl: 'static/img/1-thumb.jpg',
     type: 'img',
-    text: ''
+    text: '',
+    origin: 'static/img/1.jpg',
+    position: 'left'
 },{
     id: 2,
     imgUrl: 'static/img/2-thumb.jpg',
     type: 'img',
-    text: ''
+    text: '',
+    origin: 'static/img/2.jpg',
+    position: 'left'
 },{
     id: 3,
     imgUrl: 'static/img/3-thumb.jpg',
     type: 'img',
-    text: ''
+    text: '',
+    origin: 'static/img/3.jpg',
+    position: 'left'
 },{
     id: 4,
     imgUrl: 'static/img/4-thumb.jpg',
     type: 'img',
-    text: ''
+    text: '',
+    origin: 'static/img/4.jpg',
+    position: 'left'
 },{
     id: 5,
     imgUrl: '',
     type: 'text',
-    text: '27'
+    text: '27',
+    position: 'left',
+    origin: ''
 }]
 
 
 export const thumbSectionList2 = [{
     id: 1,
     imgUrl: 'static/img/5-thumb.jpg',
-    type: 'img'
+    type: 'img',
+    origin: 'static/img/5.jpg',
+    position: 'right',
 },{
     id: 2,
     imgUrl: 'static/img/6-thumb.jpg',
-    type: 'img'
+    type: 'img',
+    origin: 'static/img/6.jpg',
+    position: 'right',
 },{
     id: 3,
     imgUrl: 'static/img/7-thumb.jpg',
-    type: 'img'
+    type: 'img',
+    origin: 'static/img/7.jpg',
+    position: 'right',
 },{
     id: 4,
     imgUrl: 'static/img/8-thumb.jpg',
-    type: 'img'
+    type: 'img',
+    origin: 'static/img/8.jpg',
+    position: 'right',
 }]
 
 export const selectBgPicture = [{

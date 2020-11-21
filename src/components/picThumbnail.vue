@@ -1,5 +1,5 @@
 <template>
-    <div class="ikea-picture-thumb" :style="bgroundStl">
+    <div class="ikea-picture-thumb" :style="bgroundStl" @click="handleClick">
         <img class ="ikea-picture-thumb__item" v-if="type=='img'" :src='imgUrl' :style="styles"/>
         <span v-if="type=='text'" class ="ikea-picture-thumb__item base-text">+{{text}}</span>
         <img src='static/img/selected.svg' v-if='ifActive' class="thumb-selected-tick"/>
@@ -42,6 +42,11 @@
                 return style;
             }
         },
+        methods: {
+            handleClick(e) {
+                this.$emit('click', e)
+            }
+        }
     };
 </script>
 <style lang='scss'>

@@ -2,19 +2,19 @@
     <div >
         <div>
             <div class="mainContent-content">
-                <img class="RatioContainer " src="static/img/1.jpg"/>
+                <img class="RatioContainer " :src="showPictureUrl"/>
                 <span class="mainContent-content__new  base-text medium-text__fontweight">New</span>
             </div>
             <div class="mainContent-content__select">
                 <section class="mainContent-content__select-item">
-                   <IkeaPictureThumb v-for="item in thumbSectionList1" :type="item.type" :imgUrl="item.imgUrl" :text="item.text" :key="item.id" />
+                   <IkeaPictureThumb v-for="item in thumbSectionList1" :type="item.type" :imgUrl="item.imgUrl" :text="item.text" :key="item.id" @click="handleClick(item)" />
                 </section>
                 <section class="mainContent-content__select-item">
-                    <IkeaPictureThumb v-for="item in thumbSectionList2" :type="item.type" :imgUrl="item.imgUrl" :text="item.text" :key="item.id" />
+                    <IkeaPictureThumb v-for="item in thumbSectionList2" :type="item.type" :imgUrl="item.imgUrl" :text="item.text" :key="item.id" @click="handleClick(item)"/>
                 </section>
-                <section class="mainContent-content__select-item">
-                    <span class="base-text light-text__fontweight"> Shown in</span>
-                    <span class="color-tag-a base-text medium-text__fontweight"> Key Largo Zenith Teal</span>
+                <section class="mainContent-content__select-item" style='{width: 194px;}'>
+                    <span class="base-text light-text__fontweight" v-show="ifShowRightText"> Shown in</span>&nbsp;
+                    <span class="color-tag-a base-text medium-text__fontweight" v-show="ifShowRightText"> Key Largo Zenith Teal</span>
                 </section>
             </div>
         </div>
@@ -28,6 +28,7 @@
     import IkeaSellingPoint from '@/components/sellingPoint'
     import { thumbSectionList1, thumbSectionList2 } from '@/config/index.js'
     import IkeaPictureThumb from '@/components/picThumbnail'
+    import { mapState, mapActions } from 'vuex'
 
     export default {
         data() {
@@ -46,8 +47,17 @@
                 thumbSectionList2
             };
         },
+        computed: {
+            ...mapState('user',{
+                showPictureUrl: state => state.showPictureUrl,
+                ifShowRightText: state => state.ifShowRightText
+            })
+        },
         methods: {
-
+            handleClick(item) {
+                this.changePictureUrl(item)
+            },
+            ...mapActions('user', ['changePictureUrl'])
         },
         components: { IkeaPictureThumb,IkeaSellingPoint }
     };
