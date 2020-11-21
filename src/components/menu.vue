@@ -2,7 +2,7 @@
     <ul class="ikea-menu__list" :style="styles">
         <li class="ikea-menu__list-item" v-for="(item, key) in menuList" :key="key" @mouseover="mouseOver(key)" @mouseleave="mouseLeave(key)">
             <a class="ikea-menu__list__anchor" :href="item.href" :style="{ color: item.color }">{{item.name}}</a>
-            <image v-if ="item.imgurl" class="ikea-menu__list-img" :src="item.imgurl"></image>
+            <embed :src="item.imgurl" type="image/svg+xml" v-if ="item.imgurl" class="ikea-menu__list-img" />
         </li>
     </ul>
 </template>
@@ -23,11 +23,13 @@
             },
         },
         methods: {
-            mouseOver(key){
+            mouseOver(key) {
                 console.log(key)
+                this.$emit('mouseOver', key)
             },
-            mouseLeave(key){
+            mouseLeave(key) {
                 console.log(key)
+                this.$emit('mouseLeave', key)
             }
         }
     };
@@ -45,7 +47,13 @@
             cursor: pointer;
             display: flex;
             align-items: center;
+            justify-content: center;
+            flex-direction: column;
             height: 100%;
+            .ikea-menu__list-img {
+                position: relative;
+                top:5px;
+            }
             &:hover{
                 color :#107c8c;
                 box-shadow: 0 1px 0 0 #107c8c;

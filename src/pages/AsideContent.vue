@@ -7,7 +7,11 @@
             <span class='RatingAndReviews__review base-text light-text__fontweight'>(114reviews)</span>
         </article>
         <h1>Eliot Sleeper Sectional</h1>
-        <div><span class="Currency big-text">$3,850</span></div>
+        <div>
+            <span class="Currency-line big-text">$3,850</span>
+            <span class="Currency big-text background-red">$3,850</span>
+            <span class="Currency base-text background-red">(Save $1348)</span>
+        </div>
         <div class="summary">
             <p class="base-text light-text__fontweight">
                 From $214/mo for 18 months at 0% APR
@@ -15,7 +19,7 @@
             </p>
         </div>
     </div>
-    <div>
+    <div class="customize_section marginTop">
         <Customize />
     </div>
     <div class="PDPChooseYourOptionsUI__section marginTop">
@@ -173,5 +177,12 @@ margin-bottom: 0.375rem;
 }
 .PDPChooseYourOptionsUI__section {
     overflow-x: scroll;
+}
+.customize_section {
+    padding-top: $marginTop;
+    border-top: 1px solid rgb(241, 241, 241);
+}
+.Currency-line {
+    text-decoration: line-through;
 }
 </style>

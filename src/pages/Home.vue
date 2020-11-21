@@ -1,6 +1,9 @@
 <template>
     <div>
-        <header class="navbar-container">
+        <header class="header-container">
+            <span>Save 35% sitewide - our BIGGEST savings of the year</span>
+        </header>
+        <nav class="navbar-container">
             <div class="consumer__btn-container">
                 <div class="consumer-navbar__list-item">
                     <a class="consumer-navbar__list__anchor" href="/customer-photos/">Get Inspired</a>
@@ -51,13 +54,13 @@
             <div class="navbar-container__list" v-show="ifShowMenuList">
                 <div class="nav-list">这里是菜单内容</div>
             </div>
-        </header>
+        </nav>
         <div class = "tabs-container">
             <section class="logo-section">
                 <img src='static/img/log.png' />
             </section>
             <section class="menu-section">
-                <Menu :menuList='menuList' ></Menu>
+                <Menu :menuList='menuList' @mouseOver="mouseOverMenu" @mouseLeave="mouseLeaveMenu"></Menu>
             </section>
             <section class = "tool-section">
                 <div class="tool-section-item" key="search" >
@@ -89,7 +92,7 @@
                 </div>
             </section>
             <div class="navbar-container__list" v-show="ifShowNavList">
-                <div class="nav-list">这里是菜单内容</div>
+                <div class="nav-list">{{navContent}}</div>
             </div>
         </div>
         <main class="content-container">
@@ -124,43 +127,43 @@
     const menuList = [{
         key: 1,
         name: 'Living Room',
-        imgUrl: '',
+        imgurl: '',
         href: '',
         color: defaultColor,
     },{
         key: 2,
         name: 'Dining Room',
-        imgUrl: '',
+        imgurl: '',
         color: defaultColor,
     },{
         key: 3,
         name: 'Breadroom',
-        imgUrl: '',
+        imgurl: '',
         color: defaultColor,
     },{
         key: 4,
         name: 'Office',
-        imgUrl: '',
+        imgurl: '',
         color: defaultColor,
     },{
         key: 5,
         name: 'Outdoor',
-        imgUrl: '',
+        imgurl: '',
         color: defaultColor,
     },{
         key: 6,
         name: 'Decor',
-        imgUrl: '',
+        imgurl: '',
         color: defaultColor,
     },{
         key: 7,
         name: 'sale',
-        imgUrl: '',
+        imgurl: '',
         color: "#be5a5b",
     },{
         key: 8,
         name: 'inspiration',
-        imgUrl: '',
+        imgurl: '../../static/img/underline.svg',
         color: defaultColor,
     }]
     const breadcrumbList = [{
@@ -184,13 +187,12 @@
         to: '',
         name: 'Eliot Sleeper Sectional'
     }]
-
     export default {
         data() {
             return {
                 ifShowMenuList: false,
                 ifShowNavList: false,
-                dataList: [],
+                navContent: '',
                 total: 0,
                 pageIndex: 1,
                 pageSize: 6,
@@ -209,7 +211,13 @@
             handleClickTool(item) {
                 console.log(item)
             },
-            getAndGo3() {}
+            mouseOverMenu(e) {
+                this.navContent = `${menuList[e].name}的内容`
+                this.ifShowNavList = true
+            },
+            mouseLeaveMenu(e) {
+                this.ifShowNavList = false
+            }
         },
         components: { Menu, AsideContent, Breadcrumb, BreadcrumbItem, MainContent }
     };
@@ -227,7 +235,7 @@
         font-size:  0.72rem;
         font-weight: 400;
         line-height: 1.1rem;
-        height:36px;
+        height:40px;
         letter-spacing: .025rem;
         display: flex;
         justify-content: space-between;
@@ -352,5 +360,16 @@
                 transform: rotate(180deg)
             }
         }
+    }
+    .header-container {
+        color: #dbeded;
+        min-height: 50px;
+        height: 50px;
+        font-weight: 500;
+        font-size: 0.875rem;
+        background: rgb(1, 106, 120);
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 </style>

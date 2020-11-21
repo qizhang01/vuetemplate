@@ -2,6 +2,7 @@
     <div class="ikea-picture-thumb" :style="bgroundStl">
         <img class ="ikea-picture-thumb__item" v-if="type=='img'" :src='imgUrl' :style="styles"/>
         <span v-if="type=='text'" class ="ikea-picture-thumb__item base-text">+{{text}}</span>
+        <img src='static/img/selected.svg' v-if='ifActive' class="thumb-selected-tick"/>
     </div>
 </template>
 <script>
@@ -9,6 +10,7 @@
     export default {
         name: "IkeaPictureThumb",
         props: {
+            ifActive: Boolean,
             borderRedius: {
                 type: [String, Function],
                 default: "4"
@@ -52,6 +54,7 @@
         margin-right: 5px;
         line-height: 38px;
         text-align: center;
+        border-radius: 4px;
         &:hover {
             border: 1px solid #107c8c;
         }
@@ -59,5 +62,10 @@
     .ikea-picture-thumb__item {
         width: 44px;
         height: 38px;
+    }
+    .thumb-selected-tick {
+        position: absolute;
+        top: 5px;
+        left: 12px;
     }
 </style>

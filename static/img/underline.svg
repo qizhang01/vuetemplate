@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="76px" height="6px" viewBox="0 0 76 6" class="consumer-navbar__list__anchor--inspiration-underline">
+    <defs>
+        <linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="inspiration-gradient-1">
+            <stop stop-color="#99D4D9" offset="0%"></stop>
+            <stop stop-color="#70DB96" offset="14.0598606%"></stop>
+            <stop stop-color="#65BEB3" offset="29.156989%"></stop>
+            <stop stop-color="#759BEB" offset="43.1561444%"></stop>
+            <stop stop-color="#A176C8" offset="59.7260346%"></stop>
+            <stop stop-color="#F56A62" offset="71.7535895%"></stop>
+            <stop stop-color="#F8AB5E" offset="86.3677154%"></stop>
+            <stop stop-color="#FDDE5C" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-757.000000, -71.000000)" fill="url(#inspiration-gradient-1)" stroke="url(#inspiration-gradient-1)" stroke-width="0.5"><path d="M830.900264,75.5155862 C824.920761,74.1765939 814.58513,73.5173587 799.811036,73.5173587 C785.423953,73.5173587 772.198121,74.3420463 760.134717,75.9909512 L758.935347,76.1589886 C758.692257,76.1930467 758.456644,76.1303599 758.268909,75.9991622 C758.081175,75.8679646 757.941319,75.6682561 757.889743,75.4282711 C771.189044,72.6322245 784.884827,71.75 799.811546,71.7500005 L801.790996,71.7540336 C815.479904,71.8105827 825.213811,72.4632804 831.028231,73.7182446 C831.416597,73.8047883 831.669174,73.9373629 831.824984,74.0826691 C832.054441,74.2966586 832.108767,74.5464737 832.053233,74.7956859 C831.959635,75.0822466 831.798828,75.2770432 831.605333,75.3971544 C831.396596,75.526727 831.147974,75.5710561 830.900264,75.5155862 Z">
+       </path>
+    </g>
+     </g>
+</svg>
