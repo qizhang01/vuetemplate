@@ -12,6 +12,9 @@
             <span class="customize-content__topic medium-text">Taylor Felt Grey</span>
             <svg width="11" height="11" viewBox="0 0 16 16" class="customize-content__icon"><g fill="#8d8d8d" fill-rule="nonzero"><path d="M8 0C3.589 0 0 3.589 0 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8zm0 15.015A7.023 7.023 0 01.985 8 7.023 7.023 0 018 .985 7.023 7.023 0 0115.015 8 7.023 7.023 0 018 15.015z"></path><circle cx="8.128" cy="4.81" r="1"></circle><path d="M7.91 6.976a.492.492 0 00-.492.493v4.184a.492.492 0 00.985 0V7.47a.492.492 0 00-.492-.493z"></path></g></svg>
         </div>
+        <div class="customize-picture__wall">
+            <IkeaPictureThumb v-for="item in selectBgPicture" :type="item.type" :imgUrl="item.imgUrl" :text="item.text" :key="item.id" />
+        </div>
         <div class="customize-create">
             <div class="customize-create__button">Create your style</div>
             <div><span class="customize-create__book color-tag-a base-text">Get a free swatch kit</span></div>
@@ -29,15 +32,18 @@
 
 <script>
     import IkeaButton from '@/components/button'
+    import IkeaPictureThumb from '@/components/picThumbnail'
+    import { selectBgPicture } from '@/config/index.js'
     export default {
         data() {
             return {
+                selectBgPicture
             };
         },
         methods: {
 
         },
-        components: { IkeaButton }
+        components: { IkeaButton, IkeaPictureThumb }
     };
 </script>
 
@@ -70,25 +76,10 @@
     .customize-create__button {
         padding: 0.6rem 1.1rem;
         border-radius: 20px;
+        text-decoration: none;
+        color: white;
         position: relative;
-        // &:before {
-        //     z-index: 0;
-        //     width: 100%;
-        //     height: 100%;
-        //     content: '';
-        //     display: block;
-        //     position: absolute;
-        //     background: linear-gradient(90deg,#fdde5c,#f8ab5e 16.66667%,#f56a62 33.33333%,#a176c8 50%,#759beb 66.66667%,#65beb3 83.33333%,#70db96)
-        // }
-        // &:after {
-        //     z-index: 1;
-        //     width: calc(100% - 4px);
-        //     height: calc(100% - 4px);
-        //     content: '';
-        //     display: block;
-        //     position: absolute;
-        //     background: #fff;
-        // }
+        background-image: linear-gradient(90deg,#fdde5c,#f8ab5e 16.66667%,#f56a62 33.33333%,#a176c8 50%,#759beb 66.66667%,#65beb3 83.33333%,#70db96)
     }
     .ikea-btn:hover{
         border: 1px solid #8d8d8d;

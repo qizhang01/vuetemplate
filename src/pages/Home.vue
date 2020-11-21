@@ -48,6 +48,9 @@
                     </svg>
                 </div>
             </div>
+            <div class="navbar-container__list" v-show="ifShowMenuList">
+                <div class="nav-list">这里是菜单内容</div>
+            </div>
         </header>
         <div class = "tabs-container">
             <section class="logo-section">
@@ -85,6 +88,9 @@
                     </svg>
                 </div>
             </section>
+            <div class="navbar-container__list" v-show="ifShowNavList">
+                <div class="nav-list">这里是菜单内容</div>
+            </div>
         </div>
         <main class="content-container">
             <div class="content-container__breadcrumb">
@@ -182,7 +188,8 @@
     export default {
         data() {
             return {
-                data: null,
+                ifShowMenuList: false,
+                ifShowNavList: false,
                 dataList: [],
                 total: 0,
                 pageIndex: 1,
@@ -212,6 +219,7 @@
     $margin: 6vw;
 
     .navbar-container {
+        position: relative;
         border-color: #f1f1f1;
         border-bottom: 1px solid #f1f1f1;
         background-color: #f6f6f6!important;
@@ -223,12 +231,12 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0 3.33vw;
         .consumer__btn-container {
             display: flex;
             align-items: center;
             width: 100%;
             color: #424242;
+            margin-left : $padding;
             .consumer-navbar__list-item{
                 padding: 0 1rem;
                 &:first-child{
@@ -247,19 +255,24 @@
             &.consumer__btn-container--right {
                 width: auto;
                 flex-shrink: 0;
+                margin-right: 3.33vw;
             }
         }
     }
     .tabs-container {
+        position: relative;
         height: 3.75rem;
-        padding: 0 $padding;
         border-bottom: 1px solid #f1f1f1;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        .logo-section {
+            padding-left: $padding;
+        }
         .tool-section{
             display: flex;
             align-items: center;
+            padding-right: $padding;
             .tool-section-item {
                 margin: 0 16px;
                 &:hover{
@@ -270,6 +283,9 @@
                     }
                 }
             }
+        }
+        .navbar-container__list{
+            top: 64px;
         }
     }
     .menu-section {
@@ -298,5 +314,33 @@
     .content-container-panel__main {
         flex: 1 1;
         margin-right: 3rem;
+    }
+    .navbar-container__list {
+        position: absolute;
+        // min-height: 300px;
+        height: calc(100vh - 100px);
+        background: #424242;
+        opacity: 0.8;
+        width: 100%;
+        z-index: 9000;
+        top: 40px;
+        .nav-list {
+            min-height: 300px;
+            height: 300px;
+            background: #fff;
+        }
+    }
+    .consumer-navbar__sign-in-link {
+        svg {
+            position: relative;
+            top: 1px;
+        }
+        svg path {
+            stroke: #107c8c;
+        }
+        &:hover {
+            cursor: pointer;
+            color: #107c8c;
+        }
     }
 </style>
