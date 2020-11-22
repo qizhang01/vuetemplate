@@ -141,6 +141,23 @@ charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
+## 引入单元测试 但是项目比较紧张，没有时间去写
+    "jest": "^25.1.0",
+    "jest-serializer-vue": "^2.0.2",
+
+import { render } from '@testing-library/vue'
+import IkeaFocusPoint from '@/components/focusPoint'
+
+describe('focusPoint', () => {
+  it('renders when passed', () => {
+    const denominator = 4.5,  numerator = 5, totalNumber=220
+    const { findByText } = render(IkeaFocusPoint, {
+      propsData: { denominator,numerator,totalNumber }
+    })
+    findByText('4.5/5')
+  })
+})
+
 
 ##引入vuex全局管理store机制，并引入vuex module机制
 import * as types from '@/store/mutationTypes.js';
