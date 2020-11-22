@@ -139,7 +139,7 @@
         data() {
             return {
                 selectBgPicture,
-                isShowCard: true,
+                isShowCard: false,
                 buttonGroup,
                 isShowBuyNow: true,
                 summaryMock: summaryData[0]
@@ -186,6 +186,9 @@
 </script>
 
 <style lang='scss' scoped>
+    [v-cloak] {
+        display: none;
+    }
     .customize-create {
         display: flex;
         justify-content: space-between;

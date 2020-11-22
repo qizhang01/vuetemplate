@@ -18,7 +18,7 @@
                 </section>
             </div>
         </div>
-       <div class="PDPKeySellingPointsUI">
+       <div class="PDPKeySellingPointsUI" v-once>
             <IkeaSellingPoint v-for="item in sellingPointList" :imgUrl="item.imgUrl" :text = "item.text" :key="item.id"></IkeaSellingPoint>
         </div>
     </div>
