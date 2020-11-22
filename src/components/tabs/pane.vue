@@ -5,7 +5,7 @@
 </template>
 <script>
     export default {
-        name: "TabPane",
+        name: "IkeaTabsPane",
         props: {
             name: {
                 type: String

@@ -2,7 +2,7 @@
     <div class="ikea-type-switch">
         <img class ="orient-mode" :src='url'/>
         <div class = "orient-text">{{text}}</div>
-        <img src='static/img/selected.svg' v-if='ifActive' class="selected-tick"/>
+        <img src='static/img/selected.svg' v-if='isActived' class="selected-tick"/>
     </div>
 </template>
 <script>
@@ -11,7 +11,7 @@
         props: {
             url: String,
             text: String,
-            ifActive: Boolean
+            isActived: Boolean
         },
         computed: {
         },

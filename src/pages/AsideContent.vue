@@ -1,11 +1,7 @@
 <template>
 <div>
     <div>
-        <article>
-            <i class="article-star_icon"></i>
-            <span class='RatingAndReviews__rating base-text medium-text__fontweight'>4.8/5</span>
-            <span class='RatingAndReviews__review base-text light-text__fontweight'>(114reviews)</span>
-        </article>
+        <IkeaFocusPoint denominator="4.8" numerator="5" totalNumber="118"></IkeaFocusPoint>
         <h1>Eliot Sleeper Sectional</h1>
         <div>
             <span class="Currency-line big-text">$3,850</span>
@@ -19,6 +15,7 @@
             </p>
         </div>
     </div>
+    <IkeaTabsBar :tabbarList="tabbarList" @click="handleTabsClick" height="40"></IkeaTabsBar>
     <div class="customize_section marginTop">
         <Customize />
     </div>
@@ -26,7 +23,7 @@
         <div class="content-title">Select Orientation</div>
         <div class="ImageAndTextOptionDisplay__container">
            <div v-for="( item ) in orientList" :key="item.id" @click='handleOrientClick(item)'>
-                <IkeaTypeSwitch :text="item.text"  :ifActive="item.ifActive" :url="item.url" />
+                <IkeaTypeSwitch :text="item.text"  :isActived="item.isActived" :url="item.url" />
            </div>
         </div>
     </div>
@@ -64,28 +61,61 @@
     import IkeaTypeSwitch from '@/components/typeSwitch'
     import IkeaButton from '@/components/button'
     import Customize from './customize'
+    import IkeaTabsBar from '@/components/tabsBar'
+    import IkeaFocusPoint from '@/components/focusPoint'
+    const orientList = [{
+        id: 1,
+        url: 'static/img/left.svg',
+        text: 'left',
+        isActived: true
+    },{
+        id: 2,
+        url: 'static/img/right.svg',
+        text: 'right',
+        isActived: false
+    }]
+    const tabbarList = [{
+        key: 1,
+        name: 'name1',
+        isActived: true
+    },{
+        key: 2,
+        name: 'name2',
+        isActived: false
+    }]
     export default {
         data() {
             return {
-                orientList: [{
-                    id: 1,
-                    url: 'static/img/left.svg',
-                    text: 'left',
-                    ifActive: true
-                },{
-                    id: 2,
-                    url: 'static/img/right.svg',
-                    text: 'right',
-                    ifActive: false
-                }]
+                orientList,
+                tabbarList,
             };
         },
         methods: {
             handleOrientClick(item) {
-                console.log(item)
+                const { id } = item
+                const filterItem = this.orientList.filter(item => item.id === id)
+                if (filterItem[0].isActived) return
+                this.orientList.map(item => {
+                    if (item.id === id) {
+                        item.isActived = !item.isActived
+                    } else {
+                        item.isActived = false
+                    }
+                })
+            },
+            handleTabsClick(key) {
+                const filterItem = this.tabbarList.filter(item => item.key === key)
+                if (filterItem[0].isActived) return
+                this.tabbarList.map(item => {
+                    if (item.key === key) {
+                        item.isActived = !item.isActived
+                    } else {
+                        item.isActived = false
+                    }
+                })
             }
         },
-        components: { IkeaTypeSwitch, IkeaButton , Customize }
+        components: { IkeaTypeSwitch, IkeaButton , Customize, IkeaTabsBar, IkeaFocusPoint }
     };
 </script>
 
@@ -134,18 +164,6 @@ margin-bottom: 0.375rem;
            margin-right: 0.8rem;
        }
    }
-}
-.article-star_icon {
-     &:before {
-        content: '';
-        background-image: url('../../static/img/star.svg');
-        display: inline-block;
-        height: 16px;
-        width: 16px;
-        transform: scale(0.7);
-        position: relative;
-        top: 1px;
-    }
 }
 .ImageAndTextOptionDisplay__container {
    display: flex;

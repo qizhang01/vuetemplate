@@ -37,7 +37,7 @@
     </div>
 </template>
 <script>
-    import { oneOf } from "../../utils/assist";
+    import { oneOf } from '@/utils/tools'
     const prefixCls = "ikea-tabs";
     const transitionTime = 300; // from CSS
 
@@ -61,7 +61,7 @@
         return false;
     };
     export default {
-        name: "Tabs",
+        name: "IkeaTabs",
         provide() {
             return { TabsInstance: this };
         },

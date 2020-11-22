@@ -1,8 +1,8 @@
 <template>
-    <div class="ikea-picture-thumb" :style="bgroundStl" @click="handleClick">
+    <div class="ikea-picture-thumb" :style="bgroundStl" @click="handleClick" @mouseover="mouseOver" @mouseleave="mouseLeave">
         <img class ="ikea-picture-thumb__item" v-if="type=='img'" :src='imgUrl' :style="styles"/>
         <span v-if="type=='text'" class ="ikea-picture-thumb__item base-text">+{{text}}</span>
-        <img src='static/img/selected.svg' v-if='ifActive' class="thumb-selected-tick"/>
+        <img src='static/img/selected.svg' v-if='isActived' class="thumb-selected-tick"/>
     </div>
 </template>
 <script>
@@ -10,7 +10,7 @@
     export default {
         name: "IkeaPictureThumb",
         props: {
-            ifActive: Boolean,
+            isActived: Boolean,
             borderRedius: {
                 type: [String, Function],
                 default: "4"
@@ -45,7 +45,13 @@
         methods: {
             handleClick(e) {
                 this.$emit('click', e)
-            }
+            },
+            mouseOver(e) {
+                this.$emit('mouseOver', e)
+            },
+            mouseLeave(e) {
+                this.$emit('mouseLeave', e)
+            },
         }
     };
 </script>
@@ -60,6 +66,7 @@
         line-height: 38px;
         text-align: center;
         border-radius: 4px;
+        position: relative;
         &:hover {
             border: 1px solid #107c8c;
         }
@@ -70,7 +77,7 @@
     }
     .thumb-selected-tick {
         position: absolute;
-        top: 5px;
-        left: 12px;
+        top: 6px;
+        right: 8px;
     }
 </style>

@@ -54,11 +54,11 @@
             ghost: {
                 type: Boolean,
                 default: false
-            }
+            },
+            isActived: Boolean
         },
         data() {
             return {
-                isClicked: false
             }
         },
         computed: {
@@ -72,7 +72,7 @@
                         [`${prefixCls}-${this.size}`]: this.size !== 'default',
                         [`${prefixCls}-ghost`]: this.ghost,
                         [`${prefixCls}-${this.bgcolor}`]: this.bgcolor,
-                        isClicked: this.isClicked
+                        [`${prefixCls}-isActived`]: this.isActived
                     }
                 ]
             },
@@ -99,9 +99,6 @@
         methods: {
             handleClickLink(event) {
                 this.$emit('click', event)
-                this.isClicked = true
-                const openInNewWindow = event.ctrlKey || event.metaKey
-                this.handleCheckClick(event, openInNewWindow)
             }
         },
         mounted() {
