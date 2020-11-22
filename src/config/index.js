@@ -177,7 +177,7 @@ export const decideList = {
     ],
     decideItemList: [
         { id: 1, info: 'Add to bag and checkout as normal.' },
-        { id: 2, info: 'We’ll send you free swatch kit which includes of all of our upholstery options that you can select from.' },
+        { id: 2, info: "We'll send you free swatch kit which includes of all of our upholstery options that you can select from." },
         { id: 3, info: "When you're ready, you can select your customizations from your account and we'll start building your furniture." },
     ]
 }

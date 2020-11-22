@@ -90,3 +90,16 @@ div, section, nav, p {
 .background-red {
     color: #be5a5b;
 }
+ 
+.normal-text {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    letter-spacing: 0.0125rem;
+}
+
+.small-text {
+    font-size: 0.8125rem;
+    line-height: 1.4375rem;
+    letter-spacing: 0.0187rem;
+}

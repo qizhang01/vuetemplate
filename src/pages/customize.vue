@@ -17,13 +17,13 @@
             <div class="customize-create__button">Create your style</div>
             <div><span class="customize-create__book color-tag-a base-text">Get a free swatch kit</span></div>
         </div>
-        <div class="customize-notice__panel">
+        <div class="customize-notice__panel" v-if="isShowBuyNow">
            <div>
                <div>Buy Now,Decide Later</div>
                <div>(Sale ends 11/17)</div>
            </div>
            <IkeaButton  bgcolor ='black'>Lock in 25% off now</IkeaButton>
-           <button class="close-button" type="button"><svg width="9" height="9" viewBox="0 0 14 14"><path d="M14 1.41L12.59 0 7 5.59 1.41 0 0 1.41 5.59 7 0 12.59 1.41 14 7 8.41 12.59 14 14 12.59 8.41 7z" fill="#5a5a5a" fill-rule="nonzero"></path></svg></button>
+           <button class="close-button" @click="handleCloseButton" type="button"><svg width="9" height="9" viewBox="0 0 14 14"><path d="M14 1.41L12.59 0 7 5.59 1.41 0 0 1.41 5.59 7 0 12.59 1.41 14 7 8.41 12.59 14 14 12.59 8.41 7z" fill="#5a5a5a" fill-rule="nonzero"></path></svg></button>
         </div>
     </div>
 </template>
@@ -44,7 +44,8 @@
             return {
                 selectBgPicture,
                 isShowCard: false,
-                buttonGroup
+                buttonGroup,
+                isShowBuyNow: true
             };
         },
         methods: {
@@ -79,6 +80,9 @@
             handleMouseLeave(id) {
                 this.isShowCard = false
             },
+            handleCloseButton() {
+                this.isShowBuyNow = false;
+            }
         },
         components: { IkeaButton, IkeaPictureThumb }
     };
@@ -112,11 +116,14 @@
     .customize-create__button {
         color: #424242;
         font-size: 15px;
-        padding: 15px 15px;
+        padding: 0.6rem 1.1rem;
         background: #fff;
         border: 1px transparent solid;
         border-radius: 30px;
         position: relative;
+        &:hover {
+            text-decoration: underline;
+        }
         &:after {
             content: "";
             z-index: -1;
@@ -126,7 +133,7 @@
             left: -3px;
             right: -3px;
             position: absolute;
-            background: linear-gradient(135deg, #000781, #23b7cb);
+            background: linear-gradient(90deg,#fdde5c,#f8ab5e 16.66667%,#f56a62 33.33333%,#a176c8 50%,#759beb 66.66667%,#65beb3 83.33333%,#70db96);
         }
     }
     .ikea-btn:hover{
@@ -147,15 +154,22 @@
     }
     .customize-button__group {
         margin-bottom: 1.625rem;
+        .ikea-btn {
+            margin-right: 6px;
+        }
     }
     .customize-create__book {
+        &:hover {
+            text-decoration: underline;
+        }
         &:before {
             content: '';
             display: inline-block;
-            height: 15px;
+            height: 16px;
             width: 22px;
+            transform: scale(1.1);
             background-image: url('../../static/img/book.svg');
-            margin-right: 5px;
+            margin-right: 10px;
             position: relative;
             top: 4px;
         }

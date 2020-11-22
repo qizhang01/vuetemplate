@@ -1,7 +1,7 @@
 <template>
     <ul class="ikea-bar__list" :style="styles">
         <li v-for="item in tabbarList" :key="item.key" :class="{ 'ikea-bar__list-item': true, isActived: item.isActived}"  @click="handleClick(item)">
-            <span class="ikea-bar__list__anchor" :style="{ color: item.color }">{{item.name}}</span>
+            <span class="ikea-bar__list__anchor normal-text" :style="{ color: item.color }">{{item.name}}</span>
         </li>
     </ul>
 </template>
@@ -53,16 +53,16 @@
             justify-content: center;
             flex-direction: column;
             height: 100%;
-            &.isActived {
-                color :#107c8c;
-                box-shadow: 0 1px 0 0 #107c8c;
+            margin: 0px 1.875rem 2px 0;
+            color: #8d8d8d;
+            &:hover{
+                color: #424242;
             }
-            .ikea-bar__list__anchor {
-                padding: 2px 0;
-                font-size: 0.875rem;
-                letter-spacing: .0187rem;
-                line-height: 14px;
-                font-weight: 500;
+            &.isActived {
+                .normal-text {
+                    color: #424242;
+                }
+                border-bottom: 3px solid #016a78;
             }
         }
     }

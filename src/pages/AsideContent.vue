@@ -15,8 +15,8 @@
             </p>
         </div>
     </div>
-    <IkeaTabsBar :tabbarList="tabbarList" @click="handleTabsClick" height="40"></IkeaTabsBar>
     <div class="customize_section marginTop">
+        <IkeaTabsBar :tabbarList="tabbarList" @click="handleTabsClick" height="60"></IkeaTabsBar>
         <Customize v-if="showTabsKey===1"/>
         <IkeaDecideLater v-else :decideArticleList="decideArticleList" :decideItemList="decideItemList"/>
     </div>
@@ -80,11 +80,11 @@
     }]
     const tabbarList = [{
         key: 1,
-        name: 'name1',
+        name: 'Customize',
         isActived: true
     },{
         key: 2,
-        name: 'name2',
+        name: 'Decider Later',
         isActived: false
     }]
 
@@ -206,8 +206,12 @@ margin-bottom: 0.375rem;
     overflow-x: scroll;
 }
 .customize_section {
-    padding-top: $marginTop;
+    padding-top: 0.75rem;
     border-top: 1px solid rgb(241, 241, 241);
+    .ikea-bar__list {
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 2rem;
+    }
 }
 .Currency-line {
     text-decoration: line-through;

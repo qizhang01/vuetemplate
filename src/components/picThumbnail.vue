@@ -68,7 +68,9 @@
         border-radius: 4px;
         position: relative;
         &:hover {
-            border: 1px solid #107c8c;
+            outline-width: 1px;
+            outline-style: solid;
+            outline-color: #107c8c;
         }
     }
     .ikea-picture-thumb__item {
