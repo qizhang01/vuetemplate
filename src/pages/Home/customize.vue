@@ -43,7 +43,7 @@
         data() {
             return {
                 selectBgPicture,
-                isShowCard: false,
+                isShowCard: true,
                 buttonGroup,
                 isShowBuyNow: true
             };

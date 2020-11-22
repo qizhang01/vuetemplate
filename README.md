@@ -144,7 +144,9 @@ insert_final_newline = true
 ## 引入单元测试 但是项目比较紧张，没有时间去写
     "jest": "^25.1.0",
     "jest-serializer-vue": "^2.0.2",
-
+    "@testing-library/vue": "^5.4.1",
+    "@vue/test-utils": "^1.1.1",
+    
 import { render } from '@testing-library/vue'
 import IkeaFocusPoint from '@/components/focusPoint'
 
