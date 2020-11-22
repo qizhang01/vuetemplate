@@ -1,6 +1,6 @@
 <template>
     <ul class="ikea-menu__list" :style="styles">
-        <li class="ikea-menu__list-item" v-for="(item, key) in menuList" :key="key" @mouseover="mouseOver(key)" @mouseleave="mouseLeave(key)">
+        <li  v-for="(item, key) in menuList" :class="{'ikea-menu__list-item': true, 'anchor-color': item.color!=='#424242'}" :key="key" @mouseover="mouseOver(key)" @mouseleave="mouseLeave(key)">
             <a class="ikea-menu__list__anchor" :href="item.href" :style="{ color: item.color }">{{item.name}}</a>
             <embed :src="item.imgurl" type="image/svg+xml" v-if ="item.imgurl" class="ikea-menu__list-img" />
         </li>
@@ -57,6 +57,10 @@
             &:hover{
                 color :#107c8c;
                 box-shadow: 0 1px 0 0 #107c8c;
+            }
+            &.anchor-color:hover {
+                color :#be5a5b;
+                box-shadow: 0 1px 0 0 #be5a5b;
             }
             .ikea-menu__list__anchor {
                 padding: 2px 0;

@@ -170,12 +170,12 @@ export const selectBgPicture = [{
 ]
 
 export const decideList = {
-    artitle: [
+    decideArticleList: [
         { id: 1, info: 'Lock in your 35% discount.' },
         { id: 2, info: 'Choose your customizations later.' },
         { id: 3, info: '(Sale ends 11/30)' },
     ],
-    content: [
+    decideItemList: [
         { id: 1, info: 'Add to bag and checkout as normal.' },
         { id: 2, info: 'We’ll send you free swatch kit which includes of all of our upholstery options that you can select from.' },
         { id: 3, info: "When you're ready, you can select your customizations from your account and we'll start building your furniture." },

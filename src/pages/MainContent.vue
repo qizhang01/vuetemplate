@@ -12,7 +12,7 @@
                 <section class="mainContent-content__select-item">
                     <IkeaPictureThumb v-for="item in thumbSectionList2" :type="item.type" :imgUrl="item.imgUrl" :text="item.text" :key="item.id" @click="handleClick(item)"/>
                 </section>
-                <section class="mainContent-content__select-item" style='{width: 194px;}'>
+                <section class="mainContent-content__select-item">
                     <span class="base-text light-text__fontweight" v-show="ifShowRightText"> Shown in</span>&nbsp;
                     <span class="color-tag-a base-text medium-text__fontweight" v-show="ifShowRightText"> Key Largo Zenith Teal</span>
                 </section>
@@ -88,8 +88,13 @@
     .mainContent-content__select-item {
         display: flex;
         align-items: center;
+        width: 250px;
+        justify-content: center;
         .bsae-text{
             cursor: pointer;
+        }
+        &:last-child {
+            justify-content:flex-end;
         }
     }
 }

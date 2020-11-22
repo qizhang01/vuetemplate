@@ -17,7 +17,8 @@
     </div>
     <IkeaTabsBar :tabbarList="tabbarList" @click="handleTabsClick" height="40"></IkeaTabsBar>
     <div class="customize_section marginTop">
-        <Customize />
+        <Customize v-if="showTabsKey===1"/>
+        <IkeaDecideLater v-else :decideArticleList="decideArticleList" :decideItemList="decideItemList"/>
     </div>
     <div class="PDPChooseYourOptionsUI__section marginTop">
         <div class="content-title">Select Orientation</div>
@@ -63,6 +64,9 @@
     import Customize from './customize'
     import IkeaTabsBar from '@/components/tabsBar'
     import IkeaFocusPoint from '@/components/focusPoint'
+    import IkeaDecideLater from '@/components/decideLater'
+    import { decideList } from '@/config/index.js'
+
     const orientList = [{
         id: 1,
         url: 'static/img/left.svg',
@@ -83,11 +87,15 @@
         name: 'name2',
         isActived: false
     }]
+
     export default {
         data() {
             return {
                 orientList,
                 tabbarList,
+                decideArticleList: decideList.decideArticleList,
+                decideItemList: decideList.decideItemList,
+                showTabsKey: 1
             };
         },
         methods: {
@@ -113,9 +121,10 @@
                         item.isActived = false
                     }
                 })
+                this.showTabsKey = key
             }
         },
-        components: { IkeaTypeSwitch, IkeaButton , Customize, IkeaTabsBar, IkeaFocusPoint }
+        components: { IkeaTypeSwitch, IkeaButton , Customize, IkeaTabsBar, IkeaFocusPoint, IkeaDecideLater }
     };
 </script>
 

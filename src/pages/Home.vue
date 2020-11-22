@@ -119,9 +119,7 @@
     import BreadcrumbItem from '@/components/breadcrumb/breadcrumb-item'
     import AsideContent from './AsideContent'
     import MainContent from './MainContent'
-    // import search from 'static/img/search.svg'
-    // import focus from 'static/img/focus.svg'
-    // import lock from 'static/img/lock.svg'
+
 
     const defaultColor = "#424242"
     const menuList = [{

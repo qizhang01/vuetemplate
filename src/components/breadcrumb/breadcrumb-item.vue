@@ -60,15 +60,17 @@
     };
 </script>
 <style lang='scss'>
-.ikea-breadcrumb-item {
-    .ikea-breadcrumb-item-link {
-        &:hover{
-            color: #107c8c;
-            text-decoration: underline;
+.ikea-breadcrumb {
+    .ikea-breadcrumb-item:not(:last-child) {
+        .ikea-breadcrumb-item-link {
+            &:hover{
+                color: #107c8c;
+                text-decoration: underline;
+            }
         }
-    }
-    .ikea-breadcrumb-item-separator {
-        margin: 0 4px;
+        .ikea-breadcrumb-item-separator {
+            margin: 0 4px;
+        }
     }
 }
 </style>

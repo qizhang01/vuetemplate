@@ -19,7 +19,9 @@ export default {
     },
     mutations: {
         [types.SET_SHOW_IMG](state, info) {
-            state.showPictureUrl = info.origin;
+            if (info.origin) {
+                state.showPictureUrl = info.origin;
+            }
             state.ifShowRightText = info.position === 'left';
         },
     },
