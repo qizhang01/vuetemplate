@@ -11,7 +11,7 @@
         <div class="customize-picture__wall">
             <IkeaPictureThumb v-for="item in selectBgPicture" :type="item.type" :imgUrl="item.imgUrl" :text="item.text" :bground="item.bground" :isActived ="item.isActived" @click="handlePicWallClick(item.id)" @mouseOver="handleMouseOver(item.id)" @mouseLeave="handleMouseLeave(item.id)" :key="item.id" />
             <div class="customize-picture__wall-card" v-show="isShowCard">
-                <IkeaSummaryPanel :url="summaryMock.url">
+                <IkeaSummaryPanel :url="summaryMock.url" :name="summaryMock.name" >
                     <IkeaFocusPoint denominator="4.8" numerator="5" totalNumber="118" v-if="summaryMock.hasStars"></IkeaFocusPoint>
                 </IkeaSummaryPanel>
             </div>
@@ -47,74 +47,92 @@
     const summaryData = [{
         id: 1,
         url: 'static/img/1.jpg',
+        name: 'Taylor Felt Grey',
         hasStars: true
     },{
         id: 2,
         url: 'static/img/2.jpg',
+        name: 'Sunbrea Premier Fog',
         hasStars: false
     },{
         id: 3,
         url: '',
-        hasStars: true
+        hasStars: true,
+        name: 'Taylor Felt Grey',
     },{
         id: 4,
         url: '',
-        hasStars: false
+        hasStars: false,
+        name: 'Taylor Felt Grey',
     },{
         id: 5,
         url: 'static/img/1.jpg',
-        hasStars: false
+        hasStars: false,
+        name: 'Taylor Felt Grey',
     },{
         id: 6,
         url: 'static/img/2.jpg',
+        name: 'Sunbrea Premier Fog',
         hasStars: false
     },{
         id: 7,
         url: 'static/img/3.jpg',
-        hasStars: true
+        hasStars: true,
+        name: 'Sunbrea Premier Fog',
     },{
         id: 8,
         url: 'static/img/2.jpg',
+        name: 'Sunbrea Premier Fog',
         hasStars: false
     },{
         id: 9,
         url: '',
+        name: 'Sunbrea Premier Fog',
         hasStars: true
     },{
         id: 10,
         url: '',
+        name: 'Sunbrea Premier Fog',
         hasStars: false
     },{
         id: 11,
         url: 'static/img/7.jpg',
+        name: 'Sunbrea Premier Fog',
         hasStars: false
     },{
         id: 12,
         url: 'static/img/5.jpg',
+        name: 'Sunbrea Premier Fog',
         hasStars: false
     },{
         id: 13,
         url: 'static/img/6.jpg',
+        name: 'Sunbrea Premier Fog',
         hasStars: true
     },{
         id: 14,
         url: 'static/img/3.jpg',
+        name: 'Sunbrea Premier Fog',
         hasStars: false
     },{
         id: 15,
         url: '',
-        hasStars: true
+        hasStars: true,
+        name: 'Sunbrea Premier Fog',
     },{
         id: 16,
         url: '',
-        hasStars: false
+        hasStars: false,
+        name: 'Sunbrea Premier Fog',
     },{
         id: 17,
         url: 'static/img/2.jpg',
-        hasStars: false
+        hasStars: false,
+        name: 'Sunbrea Premier Fog',
     },{
         id: 18,
         url: 'static/img/9.jpg',
+        name: 'Sunbrea Premier Fog',
         hasStars: true
     }]
     export default {
@@ -263,7 +281,18 @@
     }
     .customize-picture__wall{
         position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
         margin: 20px 0px;
+        .ikea-picture-container {
+            padding: 2px;
+            margin-right: 0px;
+            border-radius: 6px;
+            &:hover{
+                border: 1px solid #8d8d8d;
+            }
+        }
         .customize-picture__wall-card {
             position: absolute;
             height: 400px;
