@@ -60,7 +60,7 @@
                 <img src='static/img/log.png' />
             </section>
             <section class="menu-section">
-                <Menu :menuList='menuList' @mouseOver="mouseOverMenu" @mouseLeave="mouseLeaveMenu"></Menu>
+                <IkeaMenuBar :menuList='menuList' @mouseOver="mouseOverMenu" @mouseLeave="mouseLeaveMenu"></IkeaMenuBar>
             </section>
             <section class = "tool-section">
                 <div class="tool-section-item" key="search" >
@@ -114,7 +114,7 @@
 
 <script>
     // import Button from "@/components/button";
-    import Menu from '@/components/menu'
+    import IkeaMenuBar from '@/components/menuBar'
     import Breadcrumb from '@/components/breadcrumb/breadcrumb'
     import BreadcrumbItem from '@/components/breadcrumb/breadcrumb-item'
     import AsideContent from './AsideContent'
@@ -217,7 +217,7 @@
                 this.ifShowNavList = false
             }
         },
-        components: { Menu, AsideContent, Breadcrumb, BreadcrumbItem, MainContent }
+        components: { IkeaMenuBar, AsideContent, Breadcrumb, BreadcrumbItem, MainContent }
     };
 </script>
 

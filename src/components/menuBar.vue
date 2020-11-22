@@ -8,7 +8,7 @@
 </template>
 <script>
     export default {
-        name: "Menu",
+        name: "IkeaMenuBar",
         props: {
             size: [Number, String],
             menuList: Array
