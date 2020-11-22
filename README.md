@@ -142,6 +142,36 @@ trim_trailing_whitespace = true
 insert_final_newline = true
 
 
+##引入vuex全局管理store机制，并引入vuex module机制
+import * as types from '@/store/mutationTypes.js';
+
+export default {
+    namespaced: true,
+    state: {
+        showPictureUrl: '../../static/img/1.jpg',
+        ifShowRightText: true
+    },
+    getters: {
+        getUserInfo: (state) => {
+            const { showPictureUrl } = state;
+            return showPictureUrl;
+        },
+    },
+    actions: {
+        changePictureUrl({ commit }, info) {
+            commit(types.SET_SHOW_IMG, info);
+        },
+    },
+    mutations: {
+        [types.SET_SHOW_IMG](state, info) {
+            if (info.origin) {
+                state.showPictureUrl = info.origin;
+            }
+            state.ifShowRightText = info.position === 'left';
+        },
+    },
+};
+
 ##关于路由
 由于只有一个页面  所以暂时只配置了一个路由。
 
