@@ -64,7 +64,7 @@
     .ikea-breadcrumb-item:not(:last-child) {
         .ikea-breadcrumb-item-link {
             &:hover{
-                color: #107c8c;
+                color: $tag-a-color;
                 text-decoration: underline;
             }
         }

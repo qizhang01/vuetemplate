@@ -55,8 +55,8 @@
                 top:5px;
             }
             &:hover{
-                color :#107c8c;
-                box-shadow: 0 1px 0 0 #107c8c;
+                color :$tag-a-color;
+                box-shadow: 0 1px 0 0 $tag-a-color;
             }
             &.anchor-color:hover {
                 color :#be5a5b;

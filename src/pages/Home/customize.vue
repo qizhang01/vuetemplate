@@ -211,7 +211,7 @@
     }
 
     .customize-create__button {
-        color: #424242;
+        color: $base-font-color;
         font-size: 15px;
         padding: 0.6rem 1.1rem;
         background: #fff;
@@ -275,7 +275,7 @@
         &:hover{
             path {
                 cursor: pointer;
-                stroke: #107c8c;
+                stroke: $tag-a-color;
             }
         }
     }

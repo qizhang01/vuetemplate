@@ -35,7 +35,7 @@ article {
     letter-spacing: 0.0125rem;
     line-height: 1.75rem;
     font-size: 1.1875rem;
-    color: #424242;
+    color: $base-font-color;
 }
 .ikea-decide__list {
     margin-top: 1rem;

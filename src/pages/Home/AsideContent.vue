@@ -135,7 +135,7 @@ $marginTop: 32px;
 }
 .summary {
     a{
-        color: #107c8c;
+        color: $tag-a-color;
     }
 }
 .content-title {
@@ -150,7 +150,7 @@ margin-bottom: 0.375rem;
        font-size:0.8125rem;
        font-weight:500;
        line-height: 1.3125rem;
-       color: #424242;
+       color: $base-font-color;
        min-height: 3rem;
        padding: 12px;
        cursor: pointer;
@@ -162,7 +162,7 @@ margin-bottom: 0.375rem;
            border: 1px solid #8d8d8d;
        }
        .cart-item-protection__notice {
-           color:#107c8c;
+           color: $tag-a-color;
        }
         &:before {
            content: '';

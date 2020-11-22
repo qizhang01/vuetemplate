@@ -56,11 +56,11 @@
             margin: 0px 1.875rem 2px 0;
             color: #8d8d8d;
             &:hover{
-                color: #424242;
+                color: $base-font-color
             }
             &.isActived {
                 .normal-text {
-                    color: #424242;
+                    color: $base-font-color
                 }
                 border-bottom: 3px solid #016a78;
             }

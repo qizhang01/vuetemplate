@@ -90,7 +90,7 @@
         margin-right: 2px;
         border-radius: 4px;
         &:hover {
-            border: 1px solid #107c8c;
+            border: 1px solid $tag-a-color;
         }
     }
 </style>

@@ -239,7 +239,7 @@
             display: flex;
             align-items: center;
             width: 100%;
-            color: #424242;
+            color: $base-font-color;
             margin-left : $padding;
             .consumer-navbar__list-item{
                 padding: 0 1rem;
@@ -252,7 +252,7 @@
                 flex: 1 1;
                 justify-content: center;
                 a {
-                    color: #107c8c;
+                    color: $tag-a-color;
                     margin-left: 5px;
                 }
             }
@@ -283,7 +283,7 @@
                     cursor: pointer;
                     svg path {
                         cursor: pointer;
-                        stroke: #107c8c;
+                        stroke: $tag-a-color;
                     }
                 }
             }
@@ -340,11 +340,11 @@
             top: 1px;
         }
         svg path {
-            stroke: #107c8c;
+            stroke: $tag-a-color;
         }
         &:hover {
             cursor: pointer;
-            color: #107c8c;
+            color: $tag-a-color;
         }
     }
     .consumer-navbar__list-item{

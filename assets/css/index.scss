@@ -1,3 +1,5 @@
+$base-font-color: #424242;
+$tag-a-color:#107c8c;
 html {
         height: 100%
 }
@@ -26,7 +28,7 @@ h1 {
     font-weight: 500;
     line-height: 1.75rem;
     letter-spacing: 0.125rem;
-    color: #424242
+    color: $base-font-color
 }
 a {
     cursor: pointer;
@@ -43,20 +45,20 @@ div, section, nav, p {
 }
 
 .ikea-icon-search{
-    content: url(../../static/img/search.svg);
+    content: url(/static/img/search.svg);
 } 
 
 .ikea-icon-focus {
-    background-image: url(../../static/img/focus.svg);
+    background-image: url(/static/img/focus.svg);
 
 }
 .ikea-icon-lock {
-    background-image: url(../../static/img/lock.svg);
+    background-image: url(/static/img/lock.svg);
 
 }
 
 .container a{
-    color: #424242;
+    color: $base-font-color
 }
 .base-text {
     font-size: 0.72rem;
@@ -68,7 +70,7 @@ div, section, nav, p {
 }
 .light-text__fontweight {
     font-weight: 400;
-    color: #424242;
+    color: $base-font-color;
 }
 .big-text{
     font-weight: 500;
@@ -84,7 +86,7 @@ div, section, nav, p {
     min-height: 15px;
 }
 .color-tag-a {
-    color: #107c8c
+    color: $tag-a-color;
 }
 
 .background-red {
