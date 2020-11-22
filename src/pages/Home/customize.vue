@@ -11,6 +11,9 @@
         <div class="customize-picture__wall">
             <IkeaPictureThumb v-for="item in selectBgPicture" :type="item.type" :imgUrl="item.imgUrl" :text="item.text" :bground="item.bground" :isActived ="item.isActived" @click="handlePicWallClick(item.id)" @mouseOver="handleMouseOver(item.id)" @mouseLeave="handleMouseLeave(item.id)" :key="item.id" />
             <div class="customize-picture__wall-card" v-show="isShowCard">
+                <IkeaSummaryPanel :url="summaryMock.url">
+                    <IkeaFocusPoint denominator="4.8" numerator="5" totalNumber="118" v-if="summaryMock.hasStars"></IkeaFocusPoint>
+                </IkeaSummaryPanel>
             </div>
         </div>
         <div class="customize-create">
@@ -32,6 +35,8 @@
     import IkeaButton from '@/components/button'
     import IkeaPictureThumb from '@/components/picThumbnail'
     import { selectBgPicture } from '@/config/index.js'
+    import IkeaSummaryPanel from '@/components/summaryPanel'
+    import IkeaFocusPoint from '@/components/focusPoint'
     const buttonGroup = [
         { id: 1, name: 'Popular', isActived: true },
         { id: 2, name: 'All', isActived: false },
@@ -39,13 +44,87 @@
         { id: 4, name: 'Pet-friendly', isActived: false },
         { id: 5, name: 'Safeguard', isActived: false },
     ]
+    const summaryData = [{
+        id: 1,
+        url: 'static/img/1.jpg',
+        hasStars: true
+    },{
+        id: 2,
+        url: 'static/img/2.jpg',
+        hasStars: false
+    },{
+        id: 3,
+        url: '',
+        hasStars: true
+    },{
+        id: 4,
+        url: '',
+        hasStars: false
+    },{
+        id: 5,
+        url: 'static/img/1.jpg',
+        hasStars: false
+    },{
+        id: 6,
+        url: 'static/img/2.jpg',
+        hasStars: false
+    },{
+        id: 7,
+        url: 'static/img/3.jpg',
+        hasStars: true
+    },{
+        id: 8,
+        url: 'static/img/2.jpg',
+        hasStars: false
+    },{
+        id: 9,
+        url: '',
+        hasStars: true
+    },{
+        id: 10,
+        url: '',
+        hasStars: false
+    },{
+        id: 11,
+        url: 'static/img/7.jpg',
+        hasStars: false
+    },{
+        id: 12,
+        url: 'static/img/5.jpg',
+        hasStars: false
+    },{
+        id: 13,
+        url: 'static/img/6.jpg',
+        hasStars: true
+    },{
+        id: 14,
+        url: 'static/img/3.jpg',
+        hasStars: false
+    },{
+        id: 15,
+        url: '',
+        hasStars: true
+    },{
+        id: 16,
+        url: '',
+        hasStars: false
+    },{
+        id: 17,
+        url: 'static/img/2.jpg',
+        hasStars: false
+    },{
+        id: 18,
+        url: 'static/img/9.jpg',
+        hasStars: true
+    }]
     export default {
         data() {
             return {
                 selectBgPicture,
                 isShowCard: true,
                 buttonGroup,
-                isShowBuyNow: true
+                isShowBuyNow: true,
+                summaryMock: summaryData[0]
             };
         },
         methods: {
@@ -75,7 +154,7 @@
 
             handleMouseOver(id) {
                 this.isShowCard = true
-                console.log(id)
+                this.summaryMock = summaryData[id - 1]
             },
             handleMouseLeave(id) {
                 this.isShowCard = false
@@ -84,7 +163,7 @@
                 this.isShowBuyNow = false;
             }
         },
-        components: { IkeaButton, IkeaPictureThumb }
+        components: { IkeaButton, IkeaPictureThumb, IkeaSummaryPanel, IkeaFocusPoint }
     };
 </script>
 
@@ -193,5 +272,9 @@
             left: -425px;
             background: #fff;
         }
+    }
+    .customize-picture__wall-card {
+        border-radius: 20px;
+        overflow: hidden;
     }
 </style>

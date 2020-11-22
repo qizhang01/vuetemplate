@@ -84,12 +84,16 @@
     display: flex;
     max-width: calc(100% - 100px);
     align-items: center;
+    padding: 2px 0px;
     justify-content: space-between;
     .mainContent-content__select-item {
         display: flex;
         align-items: center;
         width: 250px;
         justify-content: center;
+        .ikea-picture-container {
+            margin-right: 4px;
+        }
         .bsae-text{
             cursor: pointer;
         }

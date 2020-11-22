@@ -1,7 +1,8 @@
 <template>
     <div class="ikea-summary-panel">
-        <img class ="summary-panel-img" :src='url'/>
+        <img class ="summary-panel-img" v-if="url" :src='url'/>
         <div class = "summary-panel-text">
+           <slot></slot>
            <div><span></span></div>
         </div>
     </div>
@@ -23,5 +24,11 @@
 </script>
 
 <style lang="scss">
-
+    .ikea-summary-panel {
+        width: 100%;
+        .summary-panel-img {
+            width: 90%;
+            height: 200px;
+        }
+    }
 </style>

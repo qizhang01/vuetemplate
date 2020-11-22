@@ -1,8 +1,10 @@
 <template>
-    <div class="ikea-picture-thumb" :style="bgroundStl" @click="handleClick" @mouseover="mouseOver" @mouseleave="mouseLeave">
-        <img class ="ikea-picture-thumb__item" v-if="type=='img'" :src='imgUrl' :style="styles"/>
-        <span v-if="type=='text'" class ="ikea-picture-thumb__item base-text">+{{text}}</span>
-        <img src='static/img/selected.svg' v-if='isActived' class="thumb-selected-tick"/>
+    <div class="ikea-picture-container">
+        <div class="ikea-picture-thumb" :style="bgroundStl" @click="handleClick" @mouseover="mouseOver" @mouseleave="mouseLeave">
+            <img class ="ikea-picture-thumb__item" v-if="type=='img'" :src='imgUrl' :style="styles"/>
+            <span v-if="type=='text'" class ="ikea-picture-thumb__item base-text">+{{text}}</span>
+            <img src='static/img/selected.svg' v-if='isActived' class="thumb-selected-tick"/>
+        </div>
     </div>
 </template>
 <script>
@@ -57,29 +59,38 @@
 </script>
 <style lang='scss'>
     .ikea-picture-thumb {
-        display: inline-block;
-        cursor: pointer;
-        border: 1px solid #f1f1f1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 44px;
         height: 38px;
-        margin-right: 5px;
-        line-height: 38px;
-        text-align: center;
         border-radius: 4px;
         position: relative;
-        &:hover {
-            outline-width: 1px;
-            outline-style: solid;
-            outline-color: #107c8c;
+        .base-text {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
     }
     .ikea-picture-thumb__item {
         width: 44px;
+        margin: 4px;
         height: 38px;
     }
     .thumb-selected-tick {
         position: absolute;
-        top: 6px;
-        right: 8px;
+        top: 7px;
+        right: 10px;
+    }
+    .ikea-picture-container {
+        padding: 1px;
+        border: 1px solid #f1f1f1;
+        cursor: pointer;
+        display: inline-block;
+        margin-right: 2px;
+        border-radius: 4px;
+        &:hover {
+            border: 1px solid #107c8c;
+        }
     }
 </style>
