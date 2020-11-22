@@ -166,7 +166,7 @@ margin-bottom: 0.375rem;
        }
         &:before {
            content: '';
-           background-image: url('../../static/img/notice.svg');
+           background-image: url('../../../static/img/notice.svg');
            height:48px;
            display: block;
            width: 48px;

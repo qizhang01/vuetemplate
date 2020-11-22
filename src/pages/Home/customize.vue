@@ -168,7 +168,7 @@
             height: 16px;
             width: 22px;
             transform: scale(1.1);
-            background-image: url('../../static/img/book.svg');
+            background-image: url('../../../static/img/book.svg');
             margin-right: 10px;
             position: relative;
             top: 4px;
