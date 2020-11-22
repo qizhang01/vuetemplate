@@ -4,7 +4,7 @@
   "description": "A Vuejs template using Webpack 4",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run lint:fix && webpack-dev-server --progress --config build/webpack.config.dev.js",
+    "start": "npm run lint:fix && webpack-dev-server --progress --config build/webpack.config.dev.js",
     "prod": "webpack --config build/webpack.config.prod.js",
     "lint": "eslint --ext .js,.vue src",
     "lint:fix": "eslint --ext .js,.vue src --fix",
@@ -20,13 +20,11 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.21.0",
-    "element-theme-chalk": "^2.13.1",
-    "element-ui": "^2.13.1",
-    "node-sass": "^5.0.0",
     "vue": "^2.6.11",
     "vue-router": "^3.1.5"
   },
   "devDependencies": {
+    "node-sass": "^5.0.0",
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
     "@testing-library/vue": "^4.1.0",
