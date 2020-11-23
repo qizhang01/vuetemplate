@@ -4,7 +4,6 @@ import Router from 'vue-router'
 
 // 按需（懒）加载（vue实现）
 const Home = () => import('@/pages/Home')
-// const About = () => import( '../views/about')
 
 Vue.use(Router)
 
