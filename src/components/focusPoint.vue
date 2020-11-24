@@ -25,9 +25,6 @@
 </script>
 
 <style lang="scss">
-.ikea-focus-point {
-
-}
 .article-star_icon {
      &:before {
         content: '';
